@@ -1,0 +1,10 @@
+INFO:__main__:Loaded cog: cogs.channelstats
+INFO:__main__:Loaded cog: cogs.dm
+INFO:__main__:Loaded cog: cogs.findcomment
+INFO:__main__:Loaded cog: cogs.poll
+INFO:__main__:Loaded cog: cogs.timestamps
+INFO:__main__:Loaded cog: cogs.ytinfo
+INFO:__main__:Loaded cog: cogs.ytsearch
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 33b197779beedcecfb4f28713c5cd7f3).
+INFO:__main__:Bot ready: test_bot#0498

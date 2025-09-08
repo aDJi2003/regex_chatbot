@@ -1,0 +1,31 @@
+# tests.txt
+
+# --- YouTube info (video URL or ID) ---
+!ytinfo https://youtu.be/dQw4w9WgXcQ
+!ytinfo dQw4w9WgXcQ
+!ytinfo https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=10s
+
+# --- Channel stats (URL, handle, or name) ---
+!channelstats https://www.youtube.com/channel/UCq-Fj5jknLsUf-MWSy4_brA
+!channelstats https://www.youtube.com/@MrBeast
+!channelstats @MrBeast
+!channelstats MrBeast
+
+# --- YouTube search (query) ---
+!ytsearch tutorial python pemula
+!ytsearch lo-fi hip hop beats
+!ytsearch funny cat compilation
+
+# --- Comment finder (video + keyword) ---
+# Use quotes for multi-word keywords:
+!findcomment https://youtu.be/dQw4w9WgXcQ "love"
+!findcomment dQw4w9WgXcQ bug
+!findcomment https://www.youtube.com/watch?v=dQw4w9WgXcQ "rick roll"
+
+# --- Timestamp summarizer (collect timestamps from comments) ---
+!timestamps https://youtu.be/dQw4w9WgXcQ
+!timestamps dQw4w9WgXcQ
+
+# --- Poll and DM ---
+!poll What's your favorite programming language?
+!dm Halo, ini pesan uji dari bot. Testing DM feature.
