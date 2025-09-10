@@ -62,7 +62,7 @@ copy .env.example .env
 ---
 
 ## Konfigurasi `.env` (.env.example)
-Isi `.env` dengan variabel yang diperlukan. Contoh `.env.example` yang direkomendasikan:
+Isi `.env` dengan variabel yang diperlukan.
 
 ```env
 # Discord
@@ -92,7 +92,6 @@ python main.py
 ---
 
 ## Daftar Perintah / Trigger (contoh input pengguna)
-Berikut contoh pesan yang akan memicu masing-masing intent (regex berasal dari `self.patterns`):
 
 - **Salam**: `halo`, `hai`, `pagi`, `yo`, `sup`
 - **Info video**: `tolong kasih info video ini`, `apa detail video youtube?`, atau langsung `https://youtu.be/<id>`
@@ -105,9 +104,6 @@ Berikut contoh pesan yang akan memicu masing-masing intent (regex berasal dari `
 ---
 
 ## Demo — Tangkapan Layar
-
-```md
-### Demo: Contoh Interaksi
 
 1. **Greeting (salaman)**
 
@@ -125,13 +121,12 @@ Berikut contoh pesan yang akan memicu masing-masing intent (regex berasal dari `
 
 ![Channel Stats](docs/channel_stats.png)
 
-4. **YT Timestamp**
+5. **YT Timestamp**
 
 ![YT Timestamp](docs/yt_timestamp.png)
 
 6. **YT Search**
 
 ![Find Comment](docs/yt_search.png)
-```
 
 ---
