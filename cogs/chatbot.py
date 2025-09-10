@@ -130,7 +130,7 @@ class Chatbot(commands.Cog):
             query = re.sub(self.patterns["ytsearch"], "", content).strip()
             logger.info("🔍 YtSearch query: %s", query)
             if query:
-                await message.channel.send(f"🔎 Lagi cari video tentang **{query}** ... (dummy result)")
+                # await message.channel.send(f"🔎 Lagi cari video tentang **{query}** ... (dummy result)")
                 await message.channel.send("Mau berapa hasil yang ditampilkan? (1-10)")
                 def check(m):
                     return m.author == message.author and m.channel == message.channel and m.content.isdigit() and 1 <= int(m.content) <= 10
