@@ -1,31 +1,64 @@
-# tests.txt
+# Kumpulan contoh prompt untuk berinteraksi dengan chatbot dalam mode percakapan.
+## --- Sapaan (Greetings) ---
+Memulai percakapan dengan bot.
+halo
+selamat pagi
+hey bot
 
-# --- YouTube info (video URL or ID) ---
-!ytinfo https://youtu.be/dQw4w9WgXcQ
-!ytinfo dQw4w9WgXcQ
-!ytinfo https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=10s
+## --- Info Video YouTube (YtInfo) ---
+### Cara langsung (memberikan link di awal)
+kasih info detail video ini dong https://www.youtube.com/watch?v=dQw4w9WgXcQ 
+jelaskan tentang video https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
-# --- Channel stats (URL, handle, or name) ---
-!channelstats https://www.youtube.com/channel/UCq-Fj5jknLsUf-MWSy4_brA
-!channelstats https://www.youtube.com/@MrBeast
-!channelstats @MrBeast
-!channelstats MrBeast
+### Cara interaktif (bot akan menanyakan link)
+aku mau lihat info video
+apa detail dari video ini?
 
-# --- YouTube search (query) ---
-!ytsearch tutorial python pemula
-!ytsearch lo-fi hip hop beats
-!ytsearch funny cat compilation
+## --- Statistik Channel (ChannelStats) ---
+### Cara langsung (memberikan nama/handle/URL)
+cek statistik channel MrBeast
+berapa jumlah subscriber dari kanal Windah Basudara
+info untuk channel @jessnolimit
+statistik channel https://www.google.com/search?q=https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw
 
-# --- Comment finder (video + keyword) ---
-# Use quotes for multi-word keywords:
-!findcomment https://youtu.be/dQw4w9WgXcQ "love"
-!findcomment dQw4w9WgXcQ bug
-!findcomment https://www.youtube.com/watch?v=dQw4w9WgXcQ "rick roll"
+### Cara interaktif (bot akan menanyakan nama channel)
+cek statistik channel dong
+info subscriber
 
-# --- Timestamp summarizer (collect timestamps from comments) ---
-!timestamps https://youtu.be/dQw4w9WgXcQ
-!timestamps dQw4w9WgXcQ
+## --- Pencarian Video (YtSearch) ---
+### Cukup sebutkan apa yang ingin dicari
+carikan video tutorial python untuk pemula
+putar lagu lo-fi hip hop beats
+temukan video kompilasi kucing lucu
 
-# --- Poll and DM ---
-!poll What's your favorite programming language?
-!dm Halo, ini pesan uji dari bot. Testing DM feature.
+## --- Pencari Komentar (FindComment) ---
+### Penting: Gunakan kata "komentar" atau "komen" agar tidak tertukar dengan pencarian video.
+### Cara langsung (memberikan link dan kata kunci)
+cari komentar "love" di video https://www.youtube.com/watch?v=dQw4w9WgXcQ
+temukan komen tentang "bug" dari video dQw4w9WgXcQ
+
+### Cara interaktif (bot akan memandu)
+aku mau cari komentar di sebuah video
+(Bot akan bertanya link, lalu bertanya kata kunci)
+
+## --- Rangkuman Timestamp ---
+### Cara langsung (memberikan link)
+rangkum timestamp dari video https://www.youtube.com/watch?v=dQw4w9WgXcQ 
+kumpulin semua penanda waktu di video ini dQw4w9WgXcQ
+
+### Cara interaktif (bot akan menanyakan link)
+tolong carikan timestamp dong
+rangkum chapter video
+
+## --- Membuat Polling ---
+### Bot akan memproses sisa pesan setelah mendeteksi kata kunci "poll", "voting", dll.
+### Format dengan tanda kutip (satu baris)
+buat polling "Game favorit?" "Valorant" "Apex Legends" "Mobile Legends" 5m
+
+### Format dengan baris baru (multi-baris)
+bikin jajak pendapat
+Makan siang apa hari ini?
+Nasi Padang
+Bakso
+Sate Ayam
+1h
