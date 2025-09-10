@@ -51,6 +51,10 @@ class Chatbot(commands.Cog):
         findcomment_cog = self.bot.get_cog("Find Comment")
         if findcomment_cog and message.author.id in findcomment_cog.user_states:
              return # Biarkan FindCommentCog yang menangani pesan ini
+        
+        timestamps_cog = self.bot.get_cog("Timestamps")
+        if timestamps_cog and message.author.id in timestamps_cog.user_states:
+            return # Biarkan TimestampsCog yang menangani pesan ini
 
 
         content = message.content.lower()
@@ -153,7 +157,12 @@ class Chatbot(commands.Cog):
         
         # Timestamp
         elif re.search(self.patterns["timestamps"], content):
-            await message.channel.send("⏱️ Kasih link video, aku bantu kumpulin timestamp dari komentar.")
+            # Membersihkan kata pemicu dari content untuk mendapatkan argumen awal
+            # Pattern ini lebih simpel dari pattern deteksi agar tidak salah menghapus link
+            cleaning_pattern = re.compile(r"(?i)\b(timestamps?|penanda waktu|cari|kumpulin|dari|di|video|dong|ya)\b")
+            clean_content = cleaning_pattern.sub("", original_content).strip()
+            # Kirim ke listener di TimestampsCog
+            self.bot.dispatch("timestamps_request", message, clean_content)
         
         # Comment finder
         elif re.search(self.patterns["findcomment"], content):
