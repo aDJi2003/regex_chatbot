@@ -52,6 +52,10 @@ class Chatbot(commands.Cog):
         if findcomment_cog and message.author.id in findcomment_cog.user_states:
              return # Biarkan FindCommentCog yang menangani pesan ini
         
+        ytsearch_cog = self.bot.get_cog("YtSearch")
+        if ytsearch_cog and message.author.id in ytsearch_cog.user_states:
+            return # Biarkan YtSearchCog yang menangani pesan ini
+
         timestamps_cog = self.bot.get_cog("Timestamps")
         if timestamps_cog and message.author.id in timestamps_cog.user_states:
             return # Biarkan TimestampsCog yang menangani pesan ini
