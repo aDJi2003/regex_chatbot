@@ -27,7 +27,7 @@ def get_search_usage(user_id: int) -> int:
         return 0
     return entry['count']
 
-class YtSearch(commands.Cog):
+class YtSearch(commands.Cog, name ="YtSearch"):
     def __init__(self, bot):
         self.bot = bot
 

@@ -52,9 +52,9 @@ class Chatbot(commands.Cog):
         if findcomment_cog and message.author.id in findcomment_cog.user_states:
              return # Biarkan FindCommentCog yang menangani pesan ini
         
-        ytsearch_cog = self.bot.get_cog("YtSearch")
-        if ytsearch_cog and message.author.id in ytsearch_cog.user_states:
-            return # Biarkan YtSearchCog yang menangani pesan ini
+        # ytsearch_cog = self.bot.get_cog("YtSearch")
+        # if ytsearch_cog and message.author.id in ytsearch_cog.user_states:
+        #     return # Biarkan YtSearchCog yang menangani pesan ini
 
         timestamps_cog = self.bot.get_cog("Timestamps")
         if timestamps_cog and message.author.id in timestamps_cog.user_states:
@@ -186,7 +186,7 @@ class Chatbot(commands.Cog):
             await message.channel.send("👀 Kamu manggil aku? Aku bisa bantu cek info video, cari video, cari komentar, atau statistik channel!")
         
         # Fallback jika tidak ada pattern yang cocok
-        elif not any(re.search(pattern, content) for pattern in self.patterns.values()) and not self.positive_mood_pattern.search(content) and not self.negative_mood_pattern.search(content) and not re.search(r"(?i)\b(ya|iya|yes|y|tentu|boleh|mau|lanjut|ok)\b", content):
+        elif not any(re.search(pattern, content) for pattern in self.patterns.values()) and not self.positive_mood_pattern.search(content) and not self.negative_mood_pattern.search(content) and not re.search(r"(?i)\b(ya|iya|yes|y|tentu|boleh|mau|lanjut|ok)\b", content) and not re.search(r"\d+", content):
             await message.channel.send("🤖 Maaf, aku belum paham. Coba tanya soal info video, cari video, cari komentar, atau statistik channel.")
 
 async def setup(bot):
