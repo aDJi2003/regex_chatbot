@@ -46,6 +46,12 @@ class Chatbot(commands.Cog):
     async def on_message(self, message: discord.Message):
         if message.author.bot:
             return
+        
+        # Jika user sedang dalam percakapan dengan FindCommentCog, jangan ganggu.
+        findcomment_cog = self.bot.get_cog("Find Comment")
+        if findcomment_cog and message.author.id in findcomment_cog.user_states:
+             return # Biarkan FindCommentCog yang menangani pesan ini
+
 
         content = message.content.lower()
         original_content = message.content
@@ -151,7 +157,10 @@ class Chatbot(commands.Cog):
         
         # Comment finder
         elif re.search(self.patterns["findcomment"], content):
-            await message.channel.send("💬 Kasih link video + kata kunci komentar yang dicari.")
+            # Hapus kata pemicu untuk mendapatkan argumen awal (bisa kosong)
+            clean_content = re.sub(self.patterns["findcomment"], "", original_content, flags=re.IGNORECASE).strip()
+            # Kirim ke listener di FindCommentCog
+            self.bot.dispatch("findcomment_request", message, clean_content)
         
         # Poll creation
         elif re.search(self.patterns["poll"], content):
