@@ -10,3 +10,5 @@ INFO:__main__:✅ Loaded cog: cogs.timestamps
 INFO:__main__:✅ Loaded cog: cogs.ytinfo
 INFO:__main__:✅ Loaded cog: cogs.ytsearch
 INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 5145408ff013cdcd01a5cc3e8c55d3dc).
+INFO:__main__:🤖 Bot ready: amiable_elegant#0498
